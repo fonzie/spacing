@@ -1,0 +1,87 @@
+// Generate inline class names for your elements
+//
+// <div class="actions margin-y-small">
+//    <button type="submit">Totes click me!</button>
+// </div>
+
+@mixin generate-spacing-classes($base, $n: 5) {
+
+  @for $i from 1 through $n {
+    $size: $n * $base;
+
+    // Padding
+    .padding-#{$i} {
+      padding: $size !important;
+    }
+    .padding-top-#{$i} {
+      padding-top: $size !important;
+    }
+    .padding-right-#{$i} {
+      padding-right: $size !important;
+    }
+    .padding-bottom-#{$i} {
+      padding-bottom: $size !important;
+    }
+    .padding-left-#{$i} {
+      padding-left: $size !important;
+    }
+    .padding-y-#{$i} {
+      padding-top: $size !important;
+      padding-bottom: $size !important;
+    }
+    .padding-x-#{$i} {
+      padding-right: $size !important;
+      padding-left: $size !important;
+    }
+
+    // Margin Classes
+    .margin-#{$i} {
+      margin: $size !important;
+    }
+    .margin-top-#{$i} {
+      margin-top: $size !important;
+    }
+    .margin-right-#{$i} {
+      margin-right: $size !important;
+    }
+    .margin-bottom-#{$i} {
+      margin-bottom: $size !important;
+    }
+    .margin-left-#{$i} {
+      margin-left: $size !important;
+    }
+    .margin-y-#{$i} {
+      margin-top: $size !important;
+      margin-bottom: $size !important;
+    }
+    .margin-x-#{$i} {
+      margin-right: $size !important;
+      margin-left: $size !important;
+    }
+
+    // Negative Margin Classes
+    .outset-#{$i} {
+      margin: ($size * -1) !important;
+    }
+    .outset-top-#{$i} {
+      margin-top: ($size * -1) !important;
+    }
+    .outset-right-#{$i} {
+      margin-right: ($size * -1) !important;
+    }
+    .outset-bottom-#{$i} {
+      margin-bottom: ($size * -1) !important;
+    }
+    .outset-left-#{$i} {
+      margin-left: ($size * -1) !important;
+    }
+    .outset-y-#{$i} {
+      margin-top: ($size * -1) !important;
+      margin-bottom: ($size * -1) !important;
+    }
+    .outset-x-#{$i} {
+      margin-right: ($size * -1) !important;
+      margin-left: ($size * -1) !important;
+    }
+  }
+}
