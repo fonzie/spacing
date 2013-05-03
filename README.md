@@ -1,33 +1,44 @@
 # Spacing
 
-Generate any number of spacing classes based on a starting size.
+Generate any number of padding and margin classes based on a list of sizes.
 
 ## Installation
 
 ```
-fonzie install spacing
+bower install fonzie-spacing
 ```
 
 ## Usage
 
 ```scss
-@import 'spacing';
-@include generate-spacing-classes(10px);
+@import 'fonzie-spacing/index';
+@include fz-SpacingClasses($sizes: 10px 20px 40px);
 ```
 
-The mixin `generate-spacing-classes` has two parameters
+The mixin `fz-SpacingClasses` has three parameters
 
-`$base`: The base size to use to generate the classes
-`$n`: The number of spacing classes to generate.
+`$sizes`: The base size to use to generate the classes
+`$prefix`: Prefix all classes, default is `fz-`
+`$suffix`: Add a suffix to every class. Default is `""`.
 
 You can then use these in your HTML
 
 ```html
-<div class="padding-y-1">
+<div class="fz-py-1">
   Foo
 </div>
 ```
 
-This would apply a padding top and bottom of 10 pixels. If we used the class `padding-y-2` it would be 20px.
+In this case it will add 10px padding to the top and bottom of the element.
 
-You can use 3 types of classes; `padding`, `margin` and `outset`. Outset is just negative margin.
+It generates these classes:
+
+* p = Padding
+* py = Padding top and bottom
+* pz = Padding on the left and right
+* pt = Padding top
+* pb = Padding bottom
+* pl = Padding left
+* pr = Padding right
+
+It will also generate the same margin classes for each size, but uses `m` instead of `p`.

@@ -1,0 +1,8 @@
+{
+  "name": "fonzie-spacing",
+  "description": "Generate spacing classes for scalable layouts",
+  "author": "Anthony Short",
+  "main": "index.scss",
+  "version": "0.1.0",
+  "license": "MIT"
+}

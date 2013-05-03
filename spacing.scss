@@ -1,87 +1,57 @@
-// Generate inline class names for your elements
-//
-// <div class="actions margin-y-small">
-//    <button type="submit">Totes click me!</button>
-// </div>
+/**
+ * .m-4-1 - Margin, only grid-4, size 1
+ * .pl-10-3 - Padding left, only grid-10, size 3
+ * .mx-all-1 - Margin left and right, all grids
+ */
 
-@mixin generate-spacing-classes($base, $n: 5) {
-
-  @for $i from 1 through $n {
-    $size: $n * $base;
-
-    // Padding
-    .padding-#{$i} {
-      padding: $size !important;
+@mixin fz-SpacingClasses($sizes, $prefix: "fz-", $suffix: "") {
+  @for $i from 1 through length($sizes) {
+    $size: nth($sizes, $i);
+    .#{$prefix}p-#{$i}#{$suffix} {
+      padding: $size;
     }
-    .padding-top-#{$i} {
-      padding-top: $size !important;
+    .#{$prefix}pt-#{$i}#{$suffix} {
+      padding-top: $size;
     }
-    .padding-right-#{$i} {
-      padding-right: $size !important;
+    .#{$prefix}pr-#{$i}#{$suffix} {
+      padding-right: $size;
     }
-    .padding-bottom-#{$i} {
-      padding-bottom: $size !important;
+    .#{$prefix}pb-#{$i}#{$suffix} {
+      padding-bottom: $size;
     }
-    .padding-left-#{$i} {
-      padding-left: $size !important;
+    .#{$prefix}pl-#{$i}#{$suffix} {
+      padding-left: $size;
     }
-    .padding-y-#{$i} {
-      padding-top: $size !important;
-      padding-bottom: $size !important;
+    .#{$prefix}py-#{$i}#{$suffix} {
+      padding-top: $size;
+      padding-bottom: $size;
     }
-    .padding-x-#{$i} {
-      padding-right: $size !important;
-      padding-left: $size !important;
+    .#{$prefix}px-#{$i}#{$suffix} {
+      padding-right: $size;
+      padding-left: $size;
     }
-
-    // Margin Classes
-    .margin-#{$i} {
-      margin: $size !important;
+    .#{$prefix}m-#{$i}#{$suffix} {
+      margin: $size;
     }
-    .margin-top-#{$i} {
-      margin-top: $size !important;
+    .#{$prefix}mt-#{$i}#{$suffix} {
+      margin-top: $size;
     }
-    .margin-right-#{$i} {
-      margin-right: $size !important;
+    .#{$prefix}mr-#{$i}#{$suffix} {
+      margin-right: $size;
     }
-    .margin-bottom-#{$i} {
-      margin-bottom: $size !important;
+    .#{$prefix}mb-#{$i}#{$suffix} {
+      margin-bottom: $size;
     }
-    .margin-left-#{$i} {
-      margin-left: $size !important;
+    .#{$prefix}ml-#{$i}#{$suffix} {
+      margin-left: $size;
     }
-    .margin-y-#{$i} {
-      margin-top: $size !important;
-      margin-bottom: $size !important;
+    .#{$prefix}my-#{$i}#{$suffix} {
+      margin-top: $size;
+      margin-bottom: $size;
     }
-    .margin-x-#{$i} {
-      margin-right: $size !important;
-      margin-left: $size !important;
-    }
-
-    // Negative Margin Classes
-    .outset-#{$i} {
-      margin: ($size * -1) !important;
-    }
-    .outset-top-#{$i} {
-      margin-top: ($size * -1) !important;
-    }
-    .outset-right-#{$i} {
-      margin-right: ($size * -1) !important;
-    }
-    .outset-bottom-#{$i} {
-      margin-bottom: ($size * -1) !important;
-    }
-    .outset-left-#{$i} {
-      margin-left: ($size * -1) !important;
-    }
-    .outset-y-#{$i} {
-      margin-top: ($size * -1) !important;
-      margin-bottom: ($size * -1) !important;
-    }
-    .outset-x-#{$i} {
-      margin-right: ($size * -1) !important;
-      margin-left: ($size * -1) !important;
+    .#{$prefix}mx-#{$i}#{$suffix} {
+      margin-right: $size;
+      margin-left: $size;
     }
   }
 }
